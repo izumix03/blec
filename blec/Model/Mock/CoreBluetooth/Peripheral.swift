@@ -29,10 +29,10 @@ class Peripheral: Identifiable {
 
   /**
    同一性チェック
-   - Parameter uuidString:
+   - Parameter uuid:
    - Returns:
    */
-  func equals(uuidString: String) -> Bool {
-    peripheral.identifier.uuidString == uuidString
+  func equals(uuid: UUID) -> Bool {
+    peripheral.identifier == uuid
   }
 }

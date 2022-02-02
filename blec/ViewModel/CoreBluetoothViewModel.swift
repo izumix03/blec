@@ -111,7 +111,7 @@ class CoreBluetoothViewModel: NSObject,
 
     if let index = foundPeripherals.firstIndex(where: {
       $0.equals(
-        uuidString: peripheral.identifier.uuidString)
+        uuid: peripheral.identifier)
     }) {
       foundPeripherals[index].discoverCount += 1
     } else {

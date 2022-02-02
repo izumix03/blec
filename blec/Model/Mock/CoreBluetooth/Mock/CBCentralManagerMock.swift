@@ -30,7 +30,7 @@ class CBCentralManagerMock: Mock, CBCentralManagerProtocol {
     return identifiers.map {
       CBPeripheralMock(
         identifier: $0,
-        name: self.name
+        name: name
       )
     }
   }

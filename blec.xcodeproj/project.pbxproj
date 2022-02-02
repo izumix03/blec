@@ -11,6 +11,7 @@
 		1A65C24DA6DF2E74B4F14EA0 /* CBPeripheralMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65CCEC578ACA1A4B7B6DD1 /* CBPeripheralMock.swift */; };
 		1A65C27F41CCB2BF0D92A4AC /* CBBluetoothlProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65C2C65102AE4DA23B4586 /* CBBluetoothlProtocolDelegate.swift */; };
 		1A65C2CC852D4E6D8C76CAF6 /* CoreBluetoothViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65C49A37C418EC45212993 /* CoreBluetoothViewModel.swift */; };
+		1A65C2E8BB1706E8AF161B10 /* PeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65CC1041970933AD2B3A88 /* PeripheralTests.swift */; };
 		1A65C323E3E932089430CA10 /* blecApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65CEA7D416F8F42EB7AD82 /* blecApp.swift */; };
 		1A65C34CDE22C4478B9CBCF3 /* blecUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65CBD8462F3D41BB3F116A /* blecUITestsLaunchTests.swift */; };
 		1A65C37BB74A97EBA60893ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65CCC0A2BE3E178497AAC4 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		1A65C88BF78934DF38E07C2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A65C9FC8AEABD9CE1E41266 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1A65CBD8462F3D41BB3F116A /* blecUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blecUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A65CC1041970933AD2B3A88 /* PeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralTests.swift; sourceTree = "<group>"; };
 		1A65CCC0A2BE3E178497AAC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A65CCEC578ACA1A4B7B6DD1 /* CBPeripheralMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralMock.swift; sourceTree = "<group>"; };
 		1A65CD837613C26AAEDA4364 /* blecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blecTests.swift; sourceTree = "<group>"; };
@@ -164,6 +166,22 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		1A65C97AA249B201DD5B70C6 /* CoreBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				1A65CC1041970933AD2B3A88 /* PeripheralTests.swift */,
+			);
+			path = CoreBluetooth;
+			sourceTree = "<group>";
+		};
+		1A65C98649913858C890A615 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1A65C97AA249B201DD5B70C6 /* CoreBluetooth */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		1A65CD1627C394337B29E93E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				1A65CD837613C26AAEDA4364 /* blecTests.swift */,
+				1A65C98649913858C890A615 /* Mock */,
 			);
 			path = blecTests;
 			sourceTree = "<group>";
@@ -339,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A65CB2DD6B5DD6DF8D29EF3 /* blecTests.swift in Sources */,
+				1A65C2E8BB1706E8AF161B10 /* PeripheralTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
