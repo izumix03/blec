@@ -2,6 +2,7 @@ import SwiftUI
 
 struct BleDeviceListView: View {
   @EnvironmentObject private var vm: CoreBluetoothViewModel
+  internal var didAppear: ((Self) -> Void)?
 
   var body: some View {
     NavigationView {
@@ -14,6 +15,7 @@ struct BleDeviceListView: View {
         }.padding()
       }.navigationTitle("BLEデバイス")
     }.navigationViewStyle(StackNavigationViewStyle())
+    .onAppear { didAppear?(self) }
   }
 
   private var scanButton: some View {
