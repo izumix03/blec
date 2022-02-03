@@ -27,6 +27,7 @@ class CoreBluetoothViewModel: NSObject,
       centralManager = CBCentralManagerMock(
         delegate: self, queue: nil, options: nil)
     #else
+      print("not simulator!!")
       centralManager = CBCentralManager(
         delegate: self,
         queue: nil,  // 画面のチラツキの方が気持ち悪い場合は DispatchQueue を行う
@@ -55,9 +56,7 @@ class CoreBluetoothViewModel: NSObject,
     centralManager.scanForPeripherals(
       withServices: nil, options: scanOption)
     print("# Start Scan")
-    DispatchQueue.main.async {
-      self.isSearching = true
-    }
+    isSearching = true
   }
 
   /**
@@ -77,16 +76,14 @@ class CoreBluetoothViewModel: NSObject,
    - Parameter selectedPeripheral:
    */
   func connect(_ selectedPeripheral: Peripheral) {
+    print("# Start Connect")
     connectedPeripheral = selectedPeripheral
-    centralManager.connect(
-      selectedPeripheral.peripheral, options: nil)
+    centralManager.connect(selectedPeripheral.peripheral, options: nil)
   }
 
   private func disconnectPeripheral() {
-    guard let connectedPeripheral = connectedPeripheral
-    else { return }
-    centralManager.cancelPeripheralConnection(
-      connectedPeripheral.peripheral)
+    guard let connectedPeripheral = connectedPeripheral else { return }
+    centralManager.cancelPeripheralConnection(connectedPeripheral.peripheral)
   }
 
   func didDiscover(
@@ -95,12 +92,8 @@ class CoreBluetoothViewModel: NSObject,
     advertisementData: [String: Any],
     rssi RSSI: NSNumber
   ) {
-    let peripheralName =
-      advertisementData[CBAdvertisementDataLocalNameKey]
-      as? String
-    let name =
-      peripheralName != nil
-      ? peripheralName : peripheral.name
+    let pName = advertisementData[CBAdvertisementDataLocalNameKey] as? String
+    let name = pName != nil ? pName : peripheral.name
 
     let foundPeripheral = Peripheral(
       _peripheral: peripheral,
@@ -129,6 +122,7 @@ class CoreBluetoothViewModel: NSObject,
     _ central: CBCentralManagerProtocol,
     peripheral: CBPeripheralProtocol
   ) {
+    print("connect!!")
     guard let connectedPeripheral = connectedPeripheral
     else { return }
     isConnected = true

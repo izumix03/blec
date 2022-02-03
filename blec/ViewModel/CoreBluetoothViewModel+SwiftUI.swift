@@ -6,9 +6,7 @@ import CoreBluetooth
 import SwiftUI
 
 extension CoreBluetoothViewModel {
-  func navigationToDetailView(isActive: Binding<Bool>)
-    -> some View
-  {
+  func navigationToDetailView(isActive: Binding<Bool>) -> some View {
     NavigationLink(
       "",
       destination: DetailView(),
